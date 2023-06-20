@@ -1,0 +1,30 @@
+<!-- templates/registration/login.html -->
+
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if form.errors %}
+<p> Your username and password didn't match.
+    Please try again.</p>
+{% endif %}
+
+{% if next %}
+    {% if user.is_authenticated %}
+    <p>Your account does not have access to this page.
+        To proceed, please login with an account that has
+         access to this page.</p>
+    {% endif %}
+{% endif %}
+
+<form action="{% url 'login' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="submit" value="login"> log in</button>
+</form>
+
+
+
+
+{% endblock content %}
