@@ -1,3 +1,3 @@
 # blog_app
 
-<p> Simple blog app with user written in django and with a backend.
+<p> Simple blog app with user written in django and with a basic frontend.
